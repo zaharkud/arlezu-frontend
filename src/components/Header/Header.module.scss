@@ -1,0 +1,39 @@
+@import "../../scss/vars.scss";
+
+.header {
+  border-bottom: 1px solid $ACCENT_GREY;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 30px 15px 20px 15px;
+
+  .title {
+    font-size: 40px;
+  }
+  .title a {
+    color: $BRAND_COLOR;
+    font-weight: 600;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+
+  li {
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+  }
+  li a {
+    color: $DARK_GREY;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $ACCENT_GREY;
+    }
+  }
+}
