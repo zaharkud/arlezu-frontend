@@ -1,6 +1,29 @@
 @import "../../scss/vars.scss";
 
+.changeToPrevCardWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  cursor: pointer;
+}
+
+.changeToNextCardWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  cursor: pointer;
+}
+
 .card {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0px 0px 9px 0px rgba(34, 60, 80, 0.2);
+  border-radius: 12px;
+  padding: 15px 0 30px 0;
 }
 
 .img {
@@ -8,5 +31,56 @@
     width: 100%;
     height: 300px;
     object-fit: cover;
+  }
+}
+
+.textTop {
+  margin-bottom: 18px;
+
+  .word {
+    font-size: 30px;
+    color: $BRAND_COLOR;
+  }
+  .wordTranslation {
+    font-size: 20px;
+    color: $DARK_GREY;
+  }
+}
+
+.textBottom {
+  margin-top: 30px;
+  padding: 0 20px;
+  font-size: 20px;
+  color: $DARK_GREY;
+}
+
+.buttons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+
+  button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: all 0.3s;
+  }
+  button:hover {
+    opacity: 0.4;
+  }
+
+  .favoritesBtn {
+    background: url("../../../public/img/ui-images/favorites-icon.png") center center/100% 100% no-repeat;
+  }
+  .audioBtn {
+    background: url("../../../public/img/ui-images/audio-icon.png") center center/100% 100% no-repeat;
+  }
+  .translationBtn {
+    background: url("../../../public/img/ui-images/translation-icon.png") center center/100% 100% no-repeat;
+  }
+  .backBtn {
+    background: url("../../../public/img/ui-images/back-icon.png") center center/100% 100% no-repeat;
   }
 }
