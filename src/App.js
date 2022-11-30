@@ -1,36 +1,43 @@
-import './scss/App.scss';
 import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import './scss/App.scss';
 import Header from './components/Header/Header';
-import CardRouter from './components/CardRouter/CardRouter.js';
+import CardRouter from './components/CardsDictionary/CardsDictionary';
 import CardList from './components/CardList/CardList';
+import CardRepeater from './components/CardsRepeater/CardsRepeater';
 
 
 function App() {
 
-  let [ cardsArray, setCardsArray ] = useState(cardsContent);
-  let [ step, setStep ] = useState(0);
-  let [ onRoute, setOnRoute] = useState(false);
+  const [cardsArray, setCardsArray] = useState(cardsContent);
+  const [step, setStep] = useState(0);
 
-  let changeRepeatTime = (id, days) => {
+  const changeRepeatTime = (id, days) => {
     setCardsArray(cardsArray.map(card => card.id === id ? card.repeatTime = days : card));
   }
 
   return (
+
     <div className='wrapper'>
       <div className="app">
+
         <Header />
+
         <main>
-          { 
-          onRoute ? 
-            <CardRouter cards={cardsArray} step={step} setStep={setStep} setOnRoute={setOnRoute}/> :
-            <CardList cardsArray={cardsArray} step={step} setStep={setStep} onRoute={onRoute} setOnRoute={setOnRoute}/> 
-          }
-          { console.log(onRoute) }
+          <Routes>
+            <Route path='/' element={<CardList cards={cardsArray} setStep={setStep} />} />
+            <Route path='/CardRouter' element={<CardRouter cards={cardsArray} step={step} setStep={setStep} />} />
+            <Route path='/CardRepeater' element={<CardRepeater cards={cardsArray} step={step} />} />
+          </Routes>
         </main>
+
       </div>
     </div>
+
   );
 }
+
+export default App;
 
 let cardsContent = [
   {
@@ -58,8 +65,8 @@ let cardsContent = [
     word: 'կյանքը',
     wordTranslation: 'жизнь',
     phonetics: 'kyank’y',
-    sentence: 'Կյանքը դատարկ ու անիմաստ է առանց սիրո:',
-    sentenceTranslation: 'Жизнь пуста и бессмысленна без любви.',
+    sentence: 'Կյանքը անիմաստ է առանց գարեջուր:',
+    sentenceTranslation: 'Жизнь бессмысленна без пива.',
     imgSrc: './img/life.jpg',
     repeatTime: 0,
   },
@@ -85,4 +92,4 @@ let cardsContent = [
   },
 ];
 
-export default App;
+
