@@ -1,0 +1,12 @@
+.pageContainer {
+  & > div {
+    margin-bottom: 35px;
+  }
+}
+
+.boxesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+}

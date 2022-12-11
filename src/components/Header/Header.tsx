@@ -6,18 +6,8 @@ const Header = () => {
   return (
     <header className={style.header}>
       <h1 className={style.title}>
-        <Link to="/">Arlezu</Link>
+        <Link to="/">arlezu</Link>
       </h1>
-      <nav>
-        <ul className={style.menu}>
-          <li>
-            <Link to="/CardRepeater">Учить</Link>
-          </li>
-          <li>
-            <Link to="/">Словарь</Link>
-          </li>
-        </ul>
-      </nav>
     </header>
   );
 };
