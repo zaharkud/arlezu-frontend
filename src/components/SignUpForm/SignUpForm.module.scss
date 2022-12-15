@@ -1,0 +1,52 @@
+@import "../../scss/vars.scss";
+
+.formContainer {
+  border-radius: $BORDER_RADIUS;
+  padding: 60px 20px 380px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: url("../../../public/img/people-images/13.png") bottom -120px left 46% no-repeat;
+  background-color: white;
+}
+
+.formTitle {
+  font-weight: 500;
+  & span {
+    color: $BRAND_COLOR;
+    font-weight: 700;
+  }
+}
+.formSubTitle {
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.formInput {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+
+  & input {
+    border: none;
+    border-bottom: 1px solid $DARK_GREY;
+    outline: none;
+    font-size: 24px;
+    color: $DARK_GREY;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .continueButton {
+    margin-top: 30px;
+    border: none;
+    background-color: $BRAND_COLOR;
+    color: white;
+    padding: 15px 60px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+}

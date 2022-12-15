@@ -18,6 +18,11 @@ body {
   background-color: $BACK_GREY;
 }
 
+button,
+input {
+  font-family: inherit;
+}
+
 .wrapper {
   max-width: 500px;
   margin: 0 auto;

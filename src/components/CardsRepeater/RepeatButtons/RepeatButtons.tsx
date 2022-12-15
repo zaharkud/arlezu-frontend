@@ -8,13 +8,13 @@ const RepeatButtons: React.FC<RepeatButtonsTypes> = ({ showNextCard }) => {
   return (
     <div className={styles.buttons}>
       <button className={styles.repeatTimeBtn} onClick={showNextCard}>
-        Плохо: 0
+        еще раз: 0
       </button>
       <button className={styles.repeatTimeBtn} onClick={showNextCard}>
-        Хорошо: 1
+        хорошо: 1
       </button>
       <button className={styles.repeatTimeBtn} onClick={showNextCard}>
-        Отлично: 3
+        отлчино: 3
       </button>
     </div>
   );

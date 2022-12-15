@@ -1,0 +1,40 @@
+@import "../../scss/vars.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 70px 15px 20px 15px;
+}
+
+.buttons {
+  & > * {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: all 0.3s;
+
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}
+
+.backBtn {
+  background: url("../../../public/img/ui-images/back-icon.png") center center/100% 100% no-repeat;
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: "вернуться назад";
+    white-space: nowrap;
+    margin-left: 40px;
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+  }
+}

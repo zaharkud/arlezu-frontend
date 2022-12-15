@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import styles from "./CardsRepeater.module.scss";
+import style from "./CardsRepeater.module.scss";
 import { useNavigate } from "react-router-dom";
 import { RepeatButtons } from "./RepeatButtons/RepeatButtons";
 import { useEffect } from "react";
 import { ICard } from "../../types/types";
+import { HeaderSimple } from "../HeaderSimple/HeaderSimple";
 
 interface CardsRepeaterTypes {
   cards: ICard[];
@@ -39,40 +40,40 @@ const CardRepeater: React.FC<CardsRepeaterTypes> = ({ cards }) => {
 
   return (
     <div>
-      <div className={styles.card}>
-        <div className={styles.textTop}>
-          {isAnswerClicked ? (
-            <p className={styles.word}>
-              {cards[cardsForRepeat[step] - 1].word}
-            </p>
-          ) : (
-            <p className={styles.wordTranslation_big}>
-              {cards[cardsForRepeat[step] - 1].wordTranslation}
-            </p>
-          )}
-        </div>
+      <HeaderSimple />
+      <div className={style.cardContainer}>
+        <div className={style.card}>
+          <div className={style.textTop}>
+            {isAnswerClicked ? (
+              <p className={style.word}>
+                {cards[cardsForRepeat[step] - 1].word}
+              </p>
+            ) : (
+              <p className={style.wordTranslation_big}>
+                {cards[cardsForRepeat[step] - 1].wordTranslation}
+              </p>
+            )}
+          </div>
 
-        <div className={styles.img}>
-          {<img src={cards[cardsForRepeat[step] - 1].imgSrc} />}
-        </div>
+          <div className={style.img}>
+            {<img src={cards[cardsForRepeat[step] - 1].imgSrc} />}
+          </div>
 
-        <div className={styles.textBottom}>
-          {isAnswerClicked ? (
-            <p className={styles.sentence}>
-              {cards[cardsForRepeat[step] - 1].sentenceTranslation}
-            </p>
-          ) : (
-            <p className={styles.sentence}>
-              {cards[cardsForRepeat[step] - 1].sentence}
-            </p>
-          )}
+          <div className={style.textBottom}>
+            {isAnswerClicked ? (
+              <p>{cards[cardsForRepeat[step] - 1].sentenceTranslation}</p>
+            ) : (
+              <p>{cards[cardsForRepeat[step] - 1].sentence}</p>
+            )}
+          </div>
         </div>
       </div>
-      <div className={styles.buttons}>
+
+      <div className={style.buttons}>
         {isAnswerClicked ? (
           <RepeatButtons showNextCard={showNextCard} />
         ) : (
-          <button className={styles.showAnswerBtn} onClick={showAnswer}>
+          <button className={style.showAnswerBtn} onClick={showAnswer}>
             Показать ответ
           </button>
         )}
