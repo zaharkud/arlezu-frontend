@@ -12,7 +12,11 @@ const AuthInfo: React.FC<AuthInfoTypes> = ({ setIsAuth }) => {
         <Link className={style.signUp} to="/Register">
           Создать аккаунт
         </Link>
-        <Link className={style.logIn} to="/" onClick={() => setIsAuth(true)}>
+        <Link
+          className={style.logIn}
+          to="/LogIn"
+          onClick={() => setIsAuth(true)}
+        >
           Войти
         </Link>
       </div>

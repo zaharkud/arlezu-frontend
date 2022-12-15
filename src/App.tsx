@@ -7,6 +7,7 @@ import { CardRepeater } from "./components/CardsRepeater/CardsRepeater";
 import { cardsContent } from "./cards-base";
 import { InitialPage } from "./components/InitialPage/InitialPage";
 import { SignUpForm } from "./components/SignUpForm/SignUpForm";
+import { LogInForm } from "./components/LogInForm/LogInForm";
 
 const App = () => {
   //const cardsArray = useContext(cardsContent);
@@ -45,6 +46,7 @@ const App = () => {
                 element={<CardRepeater cards={cardsArray} />}
               />
               <Route path="/Register" element={<SignUpForm />} />
+              <Route path="/LogIn" element={<LogInForm />} />
             </Routes>
           </main>
         </>
