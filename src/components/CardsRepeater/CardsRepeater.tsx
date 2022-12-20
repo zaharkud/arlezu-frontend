@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { RepeatButtons } from "./RepeatButtons/RepeatButtons";
 import { useEffect } from "react";
 import { ICard } from "../../types/types";
-import { HeaderSimple } from "../HeaderSimple/HeaderSimple";
+import { HeaderSimple } from "../UI/HeaderSimple/HeaderSimple";
 
 interface CardsRepeaterTypes {
   cards: ICard[];

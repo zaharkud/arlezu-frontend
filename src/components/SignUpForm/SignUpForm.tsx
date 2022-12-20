@@ -1,5 +1,5 @@
 import style from "./SignUpForm.module.scss";
-import { Header } from "../Header/Header";
+import { Header } from "../UI/Header/Header";
 import { SignUpStepOne } from "./SignUpStepOne/SignUpStepOne";
 import { SignUpStepTwo } from "./SignUpStepTwo/SignUpStepTwo";
 import { SignUpStepThree } from "./SignUpStepThree/SignUpStepThree";

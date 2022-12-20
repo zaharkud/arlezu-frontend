@@ -16,7 +16,7 @@ const DictionaryListItem: React.FC<DictionaryListItemTypes> = ({
   };
 
   return (
-    <Link to="/CardListItem" onClick={startRoute}>
+    <Link to="/cardsviewer" onClick={startRoute}>
       <div className={styles.card}>
         <div className={styles.img}>
           <img src={card.imgSrc} />

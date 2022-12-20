@@ -2,11 +2,12 @@ import style from "./DictionaryViewerItem.module.scss";
 import { Link } from "react-router-dom";
 import { FC } from "react";
 import { ICard } from "../../../types/types";
+import { useContext } from "react";
+import { CardsContext } from "../../../context";
 
 interface DictionaryViewerItemProps {
   changeToPrevStep: () => void;
   changeToNextStep: () => void;
-  cards: ICard[];
   step: number;
   sentenceTumbler: boolean;
   setSentenceTumbler: (value: boolean) => void;
@@ -15,11 +16,12 @@ interface DictionaryViewerItemProps {
 const DictionaryViewerItem: FC<DictionaryViewerItemProps> = ({
   changeToPrevStep,
   changeToNextStep,
-  cards,
   step,
   sentenceTumbler,
   setSentenceTumbler,
 }) => {
+  const cards = useContext(CardsContext) as ICard[];
+
   return (
     <div>
       <div className={style.card}>

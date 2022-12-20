@@ -1,7 +1,7 @@
 import style from "./InitialPage.module.scss";
 import { BoxesMenuItem } from "./BoxesMenuItem/BoxesMenuItem";
 import { UserInfo } from "./UserInfo/UserInfo";
-import { Header } from "../Header/Header";
+import { Header } from "../UI/Header/Header";
 import { AuthInfo } from "./AuthInfo/AuthInfo";
 
 interface InitialPageTypes {
@@ -20,22 +20,22 @@ const InitialPage: React.FC<InitialPageTypes> = ({ isAuth, setIsAuth }) => {
           <BoxesMenuItem
             textContent="Повторить слова"
             imgContent="1.png"
-            link="/CardRepeater"
+            link="/cardsrepeater"
           />
           <BoxesMenuItem
             textContent="Словарь"
             imgContent="12.png"
-            link="/CardList"
+            link="/cardslist"
           />
           <BoxesMenuItem
             textContent="Алфавит"
             imgContent="3.png"
-            link="/CardRepeater"
+            link="/alphabet"
           />
           <BoxesMenuItem
             textContent="Грамматика"
             imgContent="2.png"
-            link="/CardRepeater"
+            link="/grammar"
           />
         </div>
       </div>

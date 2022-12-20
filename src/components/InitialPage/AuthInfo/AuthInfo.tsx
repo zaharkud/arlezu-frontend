@@ -9,12 +9,12 @@ const AuthInfo: React.FC<AuthInfoTypes> = ({ setIsAuth }) => {
   return (
     <div className={style.authContainer}>
       <div className={style.authButtons}>
-        <Link className={style.signUp} to="/Register">
+        <Link className={style.signUp} to="/signup">
           Создать аккаунт
         </Link>
         <Link
           className={style.logIn}
-          to="/LogIn"
+          to="/login"
           onClick={() => setIsAuth(true)}
         >
           Войти

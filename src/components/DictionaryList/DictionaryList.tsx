@@ -1,13 +1,16 @@
 import { DictionaryListItem } from "./DictionaryListItem/DictionaryListItem";
 import { ICard } from "../../types/types";
-import { HeaderSimple } from "../HeaderSimple/HeaderSimple";
+import { HeaderSimple } from "../UI/HeaderSimple/HeaderSimple";
+import { useContext } from "react";
+import { CardsContext } from "../../context";
 
 interface DictionaryListTypes {
-  cards: ICard[];
   setStep: (value: number) => void;
 }
 
-const DictionaryList: React.FC<DictionaryListTypes> = ({ cards, setStep }) => {
+const DictionaryList: React.FC<DictionaryListTypes> = ({ setStep }) => {
+  const cards = useContext(CardsContext) as ICard[];
+
   return (
     <div>
       <HeaderSimple />

@@ -1,5 +1,5 @@
 import style from "./LogInForm.module.scss";
-import { Header } from "../Header/Header";
+import { Header } from "../UI/Header/Header";
 import { Link } from "react-router-dom";
 
 const LogInForm = () => {

@@ -1,19 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { DictionaryViewerItem } from "./DictionaryViewerItem/DictionaryViewerItem";
 import { ICard } from "../../types/types";
-import { HeaderSimple } from "../HeaderSimple/HeaderSimple";
+import { HeaderSimple } from "../UI/HeaderSimple/HeaderSimple";
+import { CardsContext } from "../../context";
 
 interface DictionaryViewerTypes {
-  cards: ICard[];
   step: number;
   setStep: (value: number) => void;
 }
 
 const DictionaryViewer: React.FC<DictionaryViewerTypes> = ({
-  cards,
   step,
   setStep,
 }) => {
+  const cards = useContext(CardsContext) as ICard[];
+
   //State for sentence`s translation
   const [sentenceTumbler, setSentenceTumbler] = useState<boolean>(false);
 
@@ -40,7 +41,6 @@ const DictionaryViewer: React.FC<DictionaryViewerTypes> = ({
       <DictionaryViewerItem
         changeToPrevStep={changeToPrevStep}
         changeToNextStep={changeToNextStep}
-        cards={cards}
         step={step}
         sentenceTumbler={sentenceTumbler}
         setSentenceTumbler={setSentenceTumbler}
