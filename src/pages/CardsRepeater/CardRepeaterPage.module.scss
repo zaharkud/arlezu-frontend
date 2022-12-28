@@ -1,0 +1,17 @@
+@import "assets/style/cardCommon.module";
+
+.buttons {
+  margin-top: 40px;
+}
+
+.showAnswerBtn {
+  padding: 20px 40px;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid $ACCENT_GREY;
+  cursor: pointer;
+
+  font-size: 18px;
+  color: $DARK_GREY;
+  border-radius: 12px;
+}

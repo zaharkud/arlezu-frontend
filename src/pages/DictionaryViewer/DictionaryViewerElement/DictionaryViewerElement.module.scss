@@ -1,0 +1,52 @@
+@import "assets/style/cardCommon.module.scss";
+
+.changeToPrevCardWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  cursor: pointer;
+}
+
+.changeToNextCardWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  cursor: pointer;
+}
+
+.buttons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+
+  & > * {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: all 0.3s;
+
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+
+  .favoritesBtn {
+    background: url("../../../../public/img/ui-images/favorites-icon.png") center center/100% 100% no-repeat;
+  }
+  .audioBtn {
+    background: url("../../../../public/img/ui-images/audio-icon.png") center center/100% 100% no-repeat;
+  }
+  .translationBtn {
+    background: url("../../../../public/img/ui-images/translation-icon.png") center center/100% 100% no-repeat;
+  }
+  .backBtn {
+    background: url("../../../../public/img/ui-images/back-icon.png") center center/100% 100% no-repeat;
+  }
+}

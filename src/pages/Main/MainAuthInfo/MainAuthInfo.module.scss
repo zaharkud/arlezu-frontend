@@ -1,0 +1,31 @@
+@import "assets/style/vars.scss";
+
+.authContainer {
+  height: 100px;
+}
+
+.authButtons {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  & > * {
+    border-radius: $BORDER_RADIUS;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .signUp {
+    background-color: white;
+    flex: 0 1 60%;
+    color: inherit;
+  }
+
+  .logIn {
+    background-color: $BRAND_COLOR;
+    flex: 0 1 35%;
+    color: white;
+  }
+}

@@ -1,0 +1,34 @@
+@import "./vars.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+body {
+  font-family: "Arsenal", sans-serif;
+  background-color: $BACK_GREY;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+.wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.app {
+  text-align: center;
+}
