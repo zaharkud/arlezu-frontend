@@ -37,7 +37,6 @@ const DictionaryViewerPage: React.FC = () => {
       <DictionaryViewerElement
         changeToPrevStep={changeToPrevStep}
         changeToNextStep={changeToNextStep}
-        step={appContext.step}
         sentenceTumbler={sentenceTumbler}
         setSentenceTumbler={setSentenceTumbler}
       />

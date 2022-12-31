@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { ICard, IContext } from "types/types";
+import { IContext } from "types/types";
 import { HeaderSimple } from "components/index";
 import { GeneralContext } from "context/context";
 
@@ -13,11 +13,7 @@ const DictionaryListPage: React.FC = () => {
     <div>
       <HeaderSimple />
       {appContext.cards.map((card) => (
-        <DictionaryListElement
-          key={card.id}
-          card={card}
-          setStep={appContext.setStep}
-        />
+        <DictionaryListElement key={card.id} card={card} />
       ))}
     </div>
   );

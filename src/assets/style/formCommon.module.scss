@@ -26,16 +26,6 @@
   flex-direction: column;
   align-self: center;
 
-  & input {
-    border: none;
-    border-bottom: 1px solid $DARK_GREY;
-    outline: none;
-    font-size: 24px;
-    color: $DARK_GREY;
-    padding: 10px;
-    text-align: center;
-  }
-
   .continueButton {
     margin-top: 30px;
     border: none;

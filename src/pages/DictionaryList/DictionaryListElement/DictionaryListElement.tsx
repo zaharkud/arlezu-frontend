@@ -1,25 +1,29 @@
 import styles from "./DictionaryListElement.module.scss";
+import { useContext } from "react";
+
+import { GeneralContext } from "context/context";
 import { Link } from "react-router-dom";
-import { ICard } from "types/types";
+import { ICard, IContext } from "types/types";
+import { DICTIONARY_VIEWER_ROUTE } from "services/consts/route.consts";
 
 interface DictionaryListElementTypes {
   card: ICard;
-  setStep: (value: number) => void;
 }
 
 const DictionaryListElement: React.FC<DictionaryListElementTypes> = ({
   card,
-  setStep,
 }) => {
+  const appContext = useContext(GeneralContext) as IContext;
+
   const startRoute = () => {
-    setStep(card.id - 1);
+    appContext.setStep(card.id - 1);
   };
 
   return (
-    <Link to="/cards-viewer" onClick={startRoute}>
+    <Link to={DICTIONARY_VIEWER_ROUTE} onClick={startRoute}>
       <div className={styles.card}>
         <div className={styles.img}>
-          <img src={card.imgSrc} />
+          <img src={`./img/content-images/${card.imgSrc}`} />
         </div>
         <div className={styles.text}>
           <div className={styles.textTop}>

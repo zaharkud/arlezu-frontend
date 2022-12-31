@@ -15,7 +15,7 @@ const MainUserInfo = () => {
         </div>
       </div>
       <div className={style.userImg}>
-        <img src="./img/people-images/6.png" />
+        <img src="./img/deco-images/6.png" />
       </div>
     </div>
   );

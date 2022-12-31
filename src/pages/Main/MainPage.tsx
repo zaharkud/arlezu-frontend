@@ -1,9 +1,13 @@
 import style from "./MainPage.module.scss";
-import { Header } from "components/index";
+import { useContext } from "react";
 
+import { Header } from "components/index";
 import MainMenuElement from "./MainMenuElement/MainMenuElement";
 import MainUserInfo from "./MainUserInfo/MainUserInfo";
 import MainAuthInfo from "./MainAuthInfo/MainAuthInfo";
+
+import { GeneralContext } from "context/context";
+import { IContext } from "types/types";
 import {
   ALPHABET_ROUTE,
   CARDS_REPEATER_ROUTE,
@@ -11,17 +15,14 @@ import {
   GRAMMAR_ROUTE,
 } from "services/consts/route.consts";
 
-// interface MainMenuPageTypes {
-//   isAuth: boolean;
-//   setIsAuth: (value: boolean) => void;
-// }
+const MainMenuPage = () => {
+  const appContext = useContext(GeneralContext) as IContext;
 
-const MainMenuPage = ({ isAuth = false, setIsAuth = () => {} }) => {
   return (
     <div>
       <Header />
       <div className={style.pageContainer}>
-        {isAuth ? <MainUserInfo /> : <MainAuthInfo />}
+        {appContext.isAuth ? <MainUserInfo /> : <MainAuthInfo />}
 
         <div className={style.boxesContainer}>
           <MainMenuElement

@@ -6,6 +6,7 @@ import { Header } from "components/index";
 import { GeneralContext } from "context/context";
 import { MAIN_ROUTE } from "services/consts/route.consts";
 import { IContext } from "types/types";
+import { Input } from "components/Input/Input";
 
 const LoginPage = () => {
   const appContext = useContext(GeneralContext) as IContext;
@@ -18,8 +19,8 @@ const LoginPage = () => {
           <span>Рады</span> снова видеть!
         </h1>
         <form className={style.formInput}>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Пароль" />
+          <Input type="email" placeholder="Email" />
+          <Input type="password" placeholder="Пароль" />
           <Link
             className={style.continueButton}
             to={MAIN_ROUTE}

@@ -8,8 +8,7 @@ const cardsContent: ICard[] = [
     phonetics: "tun",
     sentence: "Yo vivo en esa casa blanca",
     sentenceTranslation: "Я живу в том белом доме",
-    imgSrc: "./img/house.jpg",
-    repeatTime: 0,
+    imgSrc: "house.jpg",
   },
   {
     id: 2,
@@ -18,8 +17,7 @@ const cardsContent: ICard[] = [
     phonetics: "ach’k’",
     sentence: "Diego tiene los ojos verdes",
     sentenceTranslation: "Да здравствует жизнь!",
-    imgSrc: "./img/eye.jpg",
-    repeatTime: 0,
+    imgSrc: "eye.jpg",
   },
   {
     id: 3,
@@ -28,8 +26,7 @@ const cardsContent: ICard[] = [
     phonetics: "kyank’y",
     sentence: "Կյանքը անիմաստ է առանց գարեջուր:",
     sentenceTranslation: "Жизнь бессмысленна без пива.",
-    imgSrc: "./img/life.jpg",
-    repeatTime: 0,
+    imgSrc: "life.jpg",
   },
   {
     id: 4,
@@ -38,8 +35,7 @@ const cardsContent: ICard[] = [
     phonetics: "urakhut’yun",
     sentence: "Viva la vida!",
     sentenceTranslation: "Да здравствует жизнь!",
-    imgSrc: "./img/joy.jpg",
-    repeatTime: 0,
+    imgSrc: "joy.jpg",
   },
   {
     id: 5,
@@ -48,8 +44,7 @@ const cardsContent: ICard[] = [
     phonetics: "k’aghak",
     sentence: "Viva la vida!",
     sentenceTranslation: "Да здравствует жизнь!",
-    imgSrc: "./img/city.jpg",
-    repeatTime: 0,
+    imgSrc: "city.jpg",
   },
 ];
 

@@ -1,4 +1,5 @@
 import style from "../RegistrationPage.module.scss";
+import { Input } from "components/Input/Input";
 
 interface RegistrationStepTwoTypes {
   setActive: (value: string) => void;
@@ -13,8 +14,8 @@ const RegistrationStepTwo: React.FC<RegistrationStepTwoTypes> = ({
         Добро пожаловать в <span>Arlezu!</span>
       </h1>
       <form className={style.formInput}>
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Пароль" />
+        <Input type="email" placeholder="Email" />
+        <Input type="password" placeholder="Пароль" />
         <button
           className={style.continueButton}
           onClick={() => setActive("StepThree")}

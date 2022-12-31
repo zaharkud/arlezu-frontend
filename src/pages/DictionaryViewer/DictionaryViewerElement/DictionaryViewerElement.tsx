@@ -4,11 +4,11 @@ import { FC, useContext } from "react";
 
 import { ICard, IContext } from "types/types";
 import { GeneralContext } from "context/context";
+import { MAIN_ROUTE } from "services/consts/route.consts";
 
 interface DictionaryViewerElementTypes {
   changeToPrevStep: () => void;
   changeToNextStep: () => void;
-  step: number;
   sentenceTumbler: boolean;
   setSentenceTumbler: (value: boolean) => void;
 }
@@ -16,7 +16,6 @@ interface DictionaryViewerElementTypes {
 const DictionaryViewerElement: FC<DictionaryViewerElementTypes> = ({
   changeToPrevStep,
   changeToNextStep,
-  step,
   sentenceTumbler,
   setSentenceTumbler,
 }) => {
@@ -34,19 +33,23 @@ const DictionaryViewerElement: FC<DictionaryViewerElementTypes> = ({
           onClick={changeToNextStep}
         ></div>
         <div className={style.textTop}>
-          <p className={style.word}>{appContext.cards[step].word}</p>
+          <p className={style.word}>{appContext.cards[appContext.step].word}</p>
           <p className={style.wordTranslation}>
-            {appContext.cards[step].wordTranslation}
+            {appContext.cards[appContext.step].wordTranslation}
           </p>
         </div>
         <div className={style.img}>
-          <img src={appContext.cards[step].imgSrc} />
+          <img
+            src={`./img/content-images/${
+              appContext.cards[appContext.step].imgSrc
+            }`}
+          />
         </div>
         <div className={style.textBottom}>
           <p className={style.sentence}>
             {sentenceTumbler
-              ? appContext.cards[step].sentenceTranslation
-              : appContext.cards[step].sentence}
+              ? appContext.cards[appContext.step].sentenceTranslation
+              : appContext.cards[appContext.step].sentence}
           </p>
         </div>
       </div>
@@ -58,7 +61,7 @@ const DictionaryViewerElement: FC<DictionaryViewerElementTypes> = ({
           className={style.translationBtn}
           onClick={() => setSentenceTumbler(!sentenceTumbler)}
         ></button>
-        <Link className={style.backBtn} to="/"></Link>
+        <Link className={style.backBtn} to={MAIN_ROUTE}></Link>
       </div>
     </div>
   );

@@ -6,7 +6,6 @@ export interface ICard {
   sentence: string;
   sentenceTranslation: string;
   imgSrc: string;
-  repeatTime: number;
 }
 
 export interface IUser {
@@ -17,9 +16,9 @@ export interface IUser {
 }
 
 export interface IContext {
-  cards: ICard[],
-  step: number,
-  setStep: (arg0: number) => void,
-  isAuth: boolean,
-  setIsAuth: (arg0: boolean) => void,
+  cards: ICard[];
+  step: number;
+  setStep: (arg0: number) => void;
+  isAuth: boolean;
+  setIsAuth: (arg0: boolean) => void;
 }

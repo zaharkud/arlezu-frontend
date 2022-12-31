@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 import { GeneralContext } from "context/context";
 import { ICard, IContext } from "types/types";
-import { HeaderSimple } from "components/index";
+import { MAIN_ROUTE } from "services/consts/route.consts";
 
+import { HeaderSimple } from "components/index";
 import CardRepeaterButton from "./CardRepeaterButtons/CardRepeaterButtons";
 
 const CardRepeaterPage: React.FC = () => {
@@ -24,7 +25,7 @@ const CardRepeaterPage: React.FC = () => {
     if (step < cardsForRepeat.length - 1) {
       setStep(++step);
     } else {
-      navigate("/");
+      navigate(MAIN_ROUTE);
     }
   };
 
@@ -54,7 +55,11 @@ const CardRepeaterPage: React.FC = () => {
           </div>
 
           <div className={style.img}>
-            {<img src={appContext.cards[cardsForRepeat[step] - 1].imgSrc} />}
+            <img
+              src={`./img/content-images/${
+                appContext.cards[cardsForRepeat[step] - 1].imgSrc
+              }`}
+            />
           </div>
 
           <div className={style.textBottom}>

@@ -1,4 +1,5 @@
 import style from "../RegistrationPage.module.scss";
+import { Input } from "components/Input/Input";
 
 interface RegistrationStepOneTypes {
   setActive: (value: string) => void;
@@ -14,7 +15,7 @@ const RegistrationStepOne: React.FC<RegistrationStepOneTypes> = ({
       </h1>
       <h2 className={style.formSubTitle}></h2>
       <form className={style.formInput}>
-        <input type="text" placeholder="Как тебя зовут?" />
+        <Input type="text" placeholder="Как тебя зовут?" />
         <button
           className={style.continueButton}
           onClick={() => setActive("StepTwo")}

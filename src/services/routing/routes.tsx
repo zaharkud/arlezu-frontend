@@ -26,6 +26,10 @@ import {
   MAIN_ROUTE,
 } from "services/consts/route.consts";
 
+import { useContext } from "react";
+import { GeneralContext } from "context/context";
+import { IContext } from "types/types";
+
 export const authRoutes = [
   {
     path: CARDS_REPEATER_ROUTE,
