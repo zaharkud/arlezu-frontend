@@ -1,16 +1,15 @@
-// import style from "./Button.module.scss";
+import style from "./Button.module.scss";
 
-// interface ButtonTypes {
-//   func
-//   children: React.ReactNode;
-// }
+interface ButtonTypes {
+  onClick: () => void;
+  children: React.ReactNode;
+}
 
-// const Button: React.FC<ButtonTypes> = ({ func, children }) => {
-//   return <button onClick={} className={style.button}>{children}</button>;
-// };
-// export { Button };
-
-const Button = () => {
-  return <div>Button</div>;
+const Button: React.FC<ButtonTypes> = ({ onClick, children }) => {
+  return (
+    <button onClick={onClick} className={style.button}>
+      {children}
+    </button>
+  );
 };
-export default Button;
+export { Button };

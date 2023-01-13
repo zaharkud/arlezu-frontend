@@ -1,0 +1,24 @@
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.textBlock {
+  &:not(:last-of-type) {
+    margin-bottom: 60px;
+  }
+  h1 {
+    margin-bottom: 10px;
+  }
+  & > p:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.aboutImg {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  & img {
+    max-width: 90%;
+  }
+}

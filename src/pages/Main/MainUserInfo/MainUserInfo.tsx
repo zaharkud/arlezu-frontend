@@ -1,6 +1,13 @@
 import style from "./MainUserInfo.module.scss";
 
+import { Link } from "react-router-dom";
+import { PROFILE_ROUTE } from "services/consts/route.consts";
+
+import { useAppSelector } from "store";
+
 const MainUserInfo = () => {
+  const settings = useAppSelector((state) => state.settings);
+
   return (
     <div className={style.userContainer}>
       <div className={style.userStats}>
@@ -15,7 +22,9 @@ const MainUserInfo = () => {
         </div>
       </div>
       <div className={style.userImg}>
-        <img src="./img/deco-images/6.png" />
+        <Link to={PROFILE_ROUTE}>
+          <img src={`./img/deco-images/profile/${settings.profileImg}.png`} />
+        </Link>
       </div>
     </div>
   );

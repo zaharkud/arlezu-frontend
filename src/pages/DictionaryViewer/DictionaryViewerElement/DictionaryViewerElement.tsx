@@ -6,6 +6,8 @@ import { ICard, IContext } from "types/types";
 import { GeneralContext } from "context/context";
 import { MAIN_ROUTE } from "services/consts/route.consts";
 
+import { useGetAllCardsQuery } from "store/api/arlezu.api";
+
 interface DictionaryViewerElementTypes {
   changeToPrevStep: () => void;
   changeToNextStep: () => void;
@@ -20,6 +22,7 @@ const DictionaryViewerElement: FC<DictionaryViewerElementTypes> = ({
   setSentenceTumbler,
 }) => {
   const appContext = useContext(GeneralContext) as IContext;
+  const { data } = useGetAllCardsQuery();
 
   return (
     <div>
@@ -33,23 +36,19 @@ const DictionaryViewerElement: FC<DictionaryViewerElementTypes> = ({
           onClick={changeToNextStep}
         ></div>
         <div className={style.textTop}>
-          <p className={style.word}>{appContext.cards[appContext.step].word}</p>
+          <p className={style.word}>{data[appContext.step].word}</p>
           <p className={style.wordTranslation}>
-            {appContext.cards[appContext.step].wordTranslation}
+            {data[appContext.step].word_translation}
           </p>
         </div>
         <div className={style.img}>
-          <img
-            src={`./img/content-images/${
-              appContext.cards[appContext.step].imgSrc
-            }`}
-          />
+          <img src={`./img/content-images/${data[appContext.step].img}.jpg`} />
         </div>
         <div className={style.textBottom}>
           <p className={style.sentence}>
             {sentenceTumbler
-              ? appContext.cards[appContext.step].sentenceTranslation
-              : appContext.cards[appContext.step].sentence}
+              ? data[appContext.step].sentence_translation
+              : data[appContext.step].sentence}
           </p>
         </div>
       </div>

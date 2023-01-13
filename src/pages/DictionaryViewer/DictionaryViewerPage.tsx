@@ -33,7 +33,7 @@ const DictionaryViewerPage: React.FC = () => {
 
   return (
     <div>
-      <HeaderSimple />
+      <HeaderSimple page={"Словарь"} />
       <DictionaryViewerElement
         changeToPrevStep={changeToPrevStep}
         changeToNextStep={changeToNextStep}

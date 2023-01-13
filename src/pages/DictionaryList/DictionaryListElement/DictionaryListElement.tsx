@@ -23,7 +23,7 @@ const DictionaryListElement: React.FC<DictionaryListElementTypes> = ({
     <Link to={DICTIONARY_VIEWER_ROUTE} onClick={startRoute}>
       <div className={styles.card}>
         <div className={styles.img}>
-          <img src={`./img/content-images/${card.imgSrc}`} />
+          <img src={`./img/content-images/${card.img}.jpg`} />
         </div>
         <div className={styles.text}>
           <div className={styles.textTop}>
@@ -31,7 +31,7 @@ const DictionaryListElement: React.FC<DictionaryListElementTypes> = ({
           </div>
           <div className={styles.textBottom}>
             <p className={styles.phonetics}>[{card.phonetics}]</p>
-            <p className={styles.wordTranslation}>{card.wordTranslation}</p>
+            <p className={styles.wordTranslation}>{card.word_translation}</p>
           </div>
         </div>
       </div>

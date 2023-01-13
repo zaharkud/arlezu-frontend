@@ -20,20 +20,13 @@
   margin-top: 30px;
 }
 
-.formInput {
+.form {
   margin-top: 70px;
   display: flex;
   flex-direction: column;
   align-self: center;
 
-  .continueButton {
-    margin-top: 30px;
-    border: none;
-    background-color: $BRAND_COLOR;
-    color: white;
-    padding: 15px 60px;
-    font-size: 18px;
-    border-radius: 12px;
-    cursor: pointer;
+  & > *:last-child {
+    margin-top: 50px;
   }
 }

@@ -1,11 +1,11 @@
 export interface ICard {
   id: number;
   word: string;
-  wordTranslation: string;
+  word_translation: string;
   phonetics: string;
   sentence: string;
-  sentenceTranslation: string;
-  imgSrc: string;
+  sentence_translation: string;
+  img: string;
 }
 
 export interface IUser {

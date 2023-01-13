@@ -1,15 +1,14 @@
 import style from "./LoginPage.module.scss";
-import { useContext } from "react";
-import { Link } from "react-router-dom";
 
-import { Header } from "components/index";
-import { GeneralContext } from "context/context";
+import { Header, Input, CustomLink } from "components/index";
 import { MAIN_ROUTE } from "services/consts/route.consts";
-import { IContext } from "types/types";
-import { Input } from "components/Input/Input";
+
+import { useAppSelector, useAppDispatch } from "store";
+import { changeIsAuth } from "store/settingsSlice";
 
 const LoginPage = () => {
-  const appContext = useContext(GeneralContext) as IContext;
+  const settings = useAppSelector((state) => state.settings);
+  const dispatch = useAppDispatch();
 
   return (
     <div>
@@ -18,16 +17,15 @@ const LoginPage = () => {
         <h1 className={style.formTitle}>
           <span>Рады</span> снова видеть!
         </h1>
-        <form className={style.formInput}>
+        <form className={style.form}>
           <Input type="email" placeholder="Email" />
           <Input type="password" placeholder="Пароль" />
-          <Link
-            className={style.continueButton}
+          <CustomLink
             to={MAIN_ROUTE}
-            onClick={() => appContext.setIsAuth(true)}
+            onClick={() => dispatch(changeIsAuth(true))}
           >
             Войти
-          </Link>
+          </CustomLink>
         </form>
       </div>
     </div>

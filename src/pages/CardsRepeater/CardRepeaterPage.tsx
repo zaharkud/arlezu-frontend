@@ -9,16 +9,20 @@ import { MAIN_ROUTE } from "services/consts/route.consts";
 import { HeaderSimple } from "components/index";
 import CardRepeaterButton from "./CardRepeaterButtons/CardRepeaterButtons";
 
+import { useGetAllCardsQuery } from "store/api/arlezu.api";
+
 const CardRepeaterPage: React.FC = () => {
   const navigate = useNavigate();
   const appContext = useContext(GeneralContext) as IContext;
+
+  const { data } = useGetAllCardsQuery();
 
   const [isAnswerClicked, setIsAnswerClicked] = useState(false);
   let [step, setStep] = useState(0);
   let cardsForRepeat: Array<number> = [];
 
-  appContext.cards.map((card: ICard) => {
-    if (card.repeatTime > -1) cardsForRepeat = [...cardsForRepeat, card.id];
+  data.map((card: ICard) => {
+    cardsForRepeat = [...cardsForRepeat, card.id];
   });
 
   const showNextCard = () => {
@@ -39,17 +43,17 @@ const CardRepeaterPage: React.FC = () => {
 
   return (
     <div>
-      <HeaderSimple />
+      <HeaderSimple page={"Повторение слов"} />
       <div className={style.cardContainer}>
         <div className={style.card}>
           <div className={style.textTop}>
             {isAnswerClicked ? (
               <p className={style.word}>
-                {appContext.cards[cardsForRepeat[step] - 1].word}
+                {data[cardsForRepeat[step] - 1].word}
               </p>
             ) : (
               <p className={style.wordTranslation_big}>
-                {appContext.cards[cardsForRepeat[step] - 1].wordTranslation}
+                {data[cardsForRepeat[step] - 1].word_translation}
               </p>
             )}
           </div>
@@ -57,18 +61,16 @@ const CardRepeaterPage: React.FC = () => {
           <div className={style.img}>
             <img
               src={`./img/content-images/${
-                appContext.cards[cardsForRepeat[step] - 1].imgSrc
-              }`}
+                data[cardsForRepeat[step] - 1].img
+              }.jpg`}
             />
           </div>
 
           <div className={style.textBottom}>
             {isAnswerClicked ? (
-              <p>
-                {appContext.cards[cardsForRepeat[step] - 1].sentenceTranslation}
-              </p>
+              <p>{data[cardsForRepeat[step] - 1].sentence}</p>
             ) : (
-              <p>{appContext.cards[cardsForRepeat[step] - 1].sentence}</p>
+              <p>{data[cardsForRepeat[step] - 1].sentence_translation}</p>
             )}
           </div>
         </div>

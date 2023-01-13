@@ -1,18 +1,16 @@
-import { useContext } from "react";
-
-import { IContext } from "types/types";
 import { HeaderSimple } from "components/index";
-import { GeneralContext } from "context/context";
+import { useGetAllCardsQuery } from "store/api/arlezu.api";
 
 import DictionaryListElement from "./DictionaryListElement/DictionaryListElement";
+import { ICard } from "types/types";
 
 const DictionaryListPage: React.FC = () => {
-  const appContext = useContext(GeneralContext) as IContext;
+  const { data } = useGetAllCardsQuery();
 
   return (
     <div>
-      <HeaderSimple />
-      {appContext.cards.map((card) => (
+      <HeaderSimple page={"Словарь"} />
+      {data.map((card: ICard) => (
         <DictionaryListElement key={card.id} card={card} />
       ))}
     </div>

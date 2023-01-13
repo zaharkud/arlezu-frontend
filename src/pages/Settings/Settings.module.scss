@@ -1,0 +1,118 @@
+@import "assets/style/vars.scss";
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: left;
+
+  & > *:not(:last-child) {
+    margin-bottom: 80px;
+  }
+}
+
+section h2 {
+  margin-bottom: 20px;
+}
+
+.profileImg {
+  display: flex;
+  justify-content: space-between;
+  height: 150px;
+
+  & img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.currentImg {
+  flex: 0 0 40%;
+  background-color: #f9d6bc;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+
+  & img {
+    height: 150%;
+    position: absolute;
+    top: 10%;
+  }
+}
+
+.optionalImages {
+  flex: 0 0 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  justify-items: end;
+}
+.optionalImg {
+  display: block;
+  position: relative;
+  background-color: #f9d6bc;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $ACCENT_GREY;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  &:hover::after {
+    opacity: 0.2;
+  }
+  & img {
+    position: absolute;
+    height: 200%;
+    top: 20%;
+  }
+}
+
+.range {
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: $ACCENT_GREY;
+  border-radius: 5px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: $BRAND_COLOR;
+    cursor: pointer;
+  }
+  &::-moz-range-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: $BRAND_COLOR;
+    cursor: pointer;
+  }
+}
+.rangeText {
+  display: flex;
+  justify-content: space-between;
+
+  & span {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+}

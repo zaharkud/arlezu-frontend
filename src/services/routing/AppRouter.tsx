@@ -1,26 +1,20 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { useContext } from "react";
-
 import { authRoutes, publicRoutes } from "./routes";
-import { GeneralContext } from "context/context";
-import { IContext } from "types/types";
 import { LOGIN_ROUTE, MAIN_ROUTE } from "services/consts/route.consts";
 
-const AppRouter = () => {
-  const appContext = useContext(GeneralContext) as IContext;
+import { useAppSelector } from "store";
 
-  const getPrivateRoutes = () => {
-    return authRoutes.map(({ path }) => path);
-  };
+const AppRouter = () => {
+  const settings = useAppSelector((state) => state.settings);
 
   return (
     <Routes>
-      {appContext.isAuth &&
+      {settings.isAuth &&
         authRoutes.map(({ path, component }) => {
           return <Route key={path} path={path} element={component} />;
         })}
 
-      {!appContext.isAuth &&
+      {!settings.isAuth &&
         authRoutes.map(({ path }) => {
           return (
             <Route

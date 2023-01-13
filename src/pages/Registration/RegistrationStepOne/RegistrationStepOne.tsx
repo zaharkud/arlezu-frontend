@@ -1,5 +1,5 @@
 import style from "../RegistrationPage.module.scss";
-import { Input } from "components/Input/Input";
+import { Input, Button } from "components";
 
 interface RegistrationStepOneTypes {
   setActive: (value: string) => void;
@@ -13,15 +13,9 @@ const RegistrationStepOne: React.FC<RegistrationStepOneTypes> = ({
       <h1 className={style.formTitle}>
         Добро пожаловать в <span>Arlezu!</span>
       </h1>
-      <h2 className={style.formSubTitle}></h2>
-      <form className={style.formInput}>
+      <form className={style.form}>
         <Input type="text" placeholder="Как тебя зовут?" />
-        <button
-          className={style.continueButton}
-          onClick={() => setActive("StepTwo")}
-        >
-          Далее
-        </button>
+        <Button onClick={() => setActive("StepTwo")}>Далее</Button>
       </form>
     </div>
   );
