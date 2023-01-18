@@ -1,10 +1,12 @@
 import styles from "./DictionaryListElement.module.scss";
-import { useContext } from "react";
 
-import { GeneralContext } from "context/context";
 import { Link } from "react-router-dom";
-import { ICard, IContext } from "types/types";
 import { DICTIONARY_VIEWER_ROUTE } from "services/consts/route.consts";
+
+import { ICard } from "types/types";
+
+import { useAppDispatch } from "store";
+import { changeStep } from "store/cardsHelperSlice";
 
 interface DictionaryListElementTypes {
   card: ICard;
@@ -13,10 +15,12 @@ interface DictionaryListElementTypes {
 const DictionaryListElement: React.FC<DictionaryListElementTypes> = ({
   card,
 }) => {
-  const appContext = useContext(GeneralContext) as IContext;
+  const dispatch = useAppDispatch();
+  console.log("card " + card);
 
+  //по нажатию на элемент передаем перемнную "step" - id нажатой карточки, в хранилище, откуда ее возьмент компонент "DictionaryViewer"
   const startRoute = () => {
-    appContext.setStep(card.id - 1);
+    dispatch(changeStep(card.id - 1));
   };
 
   return (

@@ -8,32 +8,6 @@
   padding: 70px 15px 40px 0;
 }
 
-.backBtn {
-  background: url("../../../public/img/ui-images/back-icon.png") center center/100% 100% no-repeat;
-  display: flex;
-  align-items: center;
-
-  display: block;
-  width: 25px;
-  height: 25px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.3;
-  transition: all 0.3s;
-
-  &:hover {
-    opacity: 0.4;
-  }
-  &::after {
-    content: "вернуться назад";
-    white-space: nowrap;
-    margin-left: 35px;
-    color: black;
-    font-size: 15px;
-    font-weight: 700;
-  }
-}
-
 .currentPage {
   opacity: 0.3;
   font-size: 15px;

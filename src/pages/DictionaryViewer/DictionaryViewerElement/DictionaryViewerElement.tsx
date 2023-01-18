@@ -1,18 +1,15 @@
 import style from "./DictionaryViewerElement.module.scss";
-import { Link } from "react-router-dom";
-import { FC, useContext } from "react";
+import { FC } from "react";
 
-import { ICard, IContext } from "types/types";
-import { GeneralContext } from "context/context";
-import { MAIN_ROUTE } from "services/consts/route.consts";
-
-import { useGetAllCardsQuery } from "store/api/arlezu.api";
+import { ICard } from "types/types";
 
 interface DictionaryViewerElementTypes {
   changeToPrevStep: () => void;
   changeToNextStep: () => void;
   sentenceTumbler: boolean;
   setSentenceTumbler: (value: boolean) => void;
+  cards: ICard[];
+  step: number;
 }
 
 const DictionaryViewerElement: FC<DictionaryViewerElementTypes> = ({
@@ -20,10 +17,9 @@ const DictionaryViewerElement: FC<DictionaryViewerElementTypes> = ({
   changeToNextStep,
   sentenceTumbler,
   setSentenceTumbler,
+  cards,
+  step,
 }) => {
-  const appContext = useContext(GeneralContext) as IContext;
-  const { data } = useGetAllCardsQuery();
-
   return (
     <div>
       <div className={style.card}>
@@ -36,19 +32,19 @@ const DictionaryViewerElement: FC<DictionaryViewerElementTypes> = ({
           onClick={changeToNextStep}
         ></div>
         <div className={style.textTop}>
-          <p className={style.word}>{data[appContext.step].word}</p>
+          <p className={style.word}>{cards[step].word}</p>
           <p className={style.wordTranslation}>
-            {data[appContext.step].word_translation}
+            {cards[step].word_translation}
           </p>
         </div>
         <div className={style.img}>
-          <img src={`./img/content-images/${data[appContext.step].img}.jpg`} />
+          <img src={`./img/content-images/${cards[step].img}.jpg`} />
         </div>
         <div className={style.textBottom}>
           <p className={style.sentence}>
             {sentenceTumbler
-              ? data[appContext.step].sentence_translation
-              : data[appContext.step].sentence}
+              ? cards[step].sentence_translation
+              : cards[step].sentence}
           </p>
         </div>
       </div>
@@ -60,7 +56,7 @@ const DictionaryViewerElement: FC<DictionaryViewerElementTypes> = ({
           className={style.translationBtn}
           onClick={() => setSentenceTumbler(!sentenceTumbler)}
         ></button>
-        <Link className={style.backBtn} to={MAIN_ROUTE}></Link>
+        <button className={style.nextBtn} onClick={changeToNextStep}></button>
       </div>
     </div>
   );

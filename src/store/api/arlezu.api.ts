@@ -7,7 +7,10 @@ export const arlezuAPI = createApi({
     getAllCards: build.query<any, void>({
       query: () => "cards",
     }),
+    getCardsByPage: build.query<any, number | void>({
+      query: (page = 1, limit = 5) => `cards?page=${page}&limit=${limit}`,
+    }),
   }),
 });
 
-export const { useGetAllCardsQuery } = arlezuAPI;
+export const { useGetAllCardsQuery, useGetCardsByPageQuery } = arlezuAPI;

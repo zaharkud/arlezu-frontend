@@ -1,0 +1,29 @@
+@import "assets/style/vars.scss";
+
+.button {
+  border: none;
+  border-radius: 7px;
+
+  color: black;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+
+  cursor: pointer;
+  opacity: 0.3;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 0.4;
+  }
+}
+
+.buttonLeft {
+  background: url("../../../public/img/ui-images/arrow-left.png") center left/25px 25px no-repeat;
+  padding: 10px 10px 10px 35px;
+}
+
+.buttonRight {
+  background: url("../../../public/img/ui-images/arrow-right.png") center right/25px 25px no-repeat;
+  padding: 10px 35px 10px 10px;
+}

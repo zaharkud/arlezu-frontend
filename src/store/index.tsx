@@ -6,10 +6,12 @@ import {
 } from "react-redux/es/exports";
 import { arlezuAPI } from "./api/arlezu.api";
 import settingsReducer from "./settingsSlice";
+import cardsHelperReducer from "./cardsHelperSlice";
 
 export const store = configureStore({
   reducer: {
     settings: settingsReducer,
+    cardsHelper: cardsHelperReducer,
     [arlezuAPI.reducerPath]: arlezuAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>

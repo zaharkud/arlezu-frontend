@@ -1,9 +1,9 @@
 import style from "./CardRepeaterPage.module.scss";
-import { useState, useEffect, useContext } from "react";
+
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { GeneralContext } from "context/context";
-import { ICard, IContext } from "types/types";
+import { ICard } from "types/types";
 import { MAIN_ROUTE } from "services/consts/route.consts";
 
 import { HeaderSimple } from "components/index";
@@ -13,18 +13,24 @@ import { useGetAllCardsQuery } from "store/api/arlezu.api";
 
 const CardRepeaterPage: React.FC = () => {
   const navigate = useNavigate();
-  const appContext = useContext(GeneralContext) as IContext;
 
-  const { data } = useGetAllCardsQuery();
+  //получаем карточки со словами
+  const { data = [] } = useGetAllCardsQuery();
 
-  const [isAnswerClicked, setIsAnswerClicked] = useState(false);
+  //для перехода между карточками используется локальное состояние "step", поскольку компонент не связан с другими через этот параметр
   let [step, setStep] = useState(0);
+
+  //состояние, определяющее нажата ли кнопка "Показать ответ" для последующего сброса "word" и "sentence" в начальное положение для каждой карточки
+  const [isAnswerClicked, setIsAnswerClicked] = useState(false);
+
   let cardsForRepeat: Array<number> = [];
 
+  //заполняем массив с карточками для повторения, добавляя id нужной карточки
   data.map((card: ICard) => {
     cardsForRepeat = [...cardsForRepeat, card.id];
   });
 
+  //показываем следующую карточку, иначе, если карточки закончились, переадресуем на главную страницу
   const showNextCard = () => {
     if (step < cardsForRepeat.length - 1) {
       setStep(++step);
@@ -33,13 +39,14 @@ const CardRepeaterPage: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    setIsAnswerClicked(false);
-  }, [step]);
-
   const showAnswer = () => {
     setIsAnswerClicked(true);
   };
+
+  //после смены карточки возвращаем "word" и "sentence" в начальное положение
+  useEffect(() => {
+    setIsAnswerClicked(false);
+  }, [step]);
 
   return (
     <div>

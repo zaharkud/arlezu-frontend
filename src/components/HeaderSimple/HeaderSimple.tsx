@@ -1,5 +1,6 @@
 import style from "./HeaderSimple.module.scss";
 import { useNavigate } from "react-router-dom";
+import { ArrowButtonLeft } from "components/ArrowButton/ArrowButton";
 
 interface HeaderSimpleTypes {
   page: string;
@@ -11,7 +12,7 @@ const HeaderSimple = ({ page = "page" }) => {
 
   return (
     <header className={style.header}>
-      <button className={style.backBtn} onClick={goBack}></button>
+      <ArrowButtonLeft onClick={goBack}>вернуться назад</ArrowButtonLeft>
       <div className={style.currentPage}>{page}</div>
     </header>
   );

@@ -15,7 +15,7 @@ const initialState: initialStateTypes = {
 };
 
 const settingsSlice = createSlice({
-  name: "test",
+  name: "settings",
   initialState,
   reducers: {
     changeProfileImg(state, action) {
