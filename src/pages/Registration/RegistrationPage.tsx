@@ -6,15 +6,52 @@ import RegistrationStepOne from "./RegistrationStepOne/RegistrationStepOne";
 import RegistrationStepTwo from "./RegistrationStepTwo/RegistrationStepTwo";
 import RegistrationStepThree from "./RegistrationStepThree/RegistrationStepThree";
 
+interface registartionDataTypes {
+  name: string;
+  password: string;
+  email: string;
+}
+
+const registartionData: registartionDataTypes = {
+  name: "",
+  email: "",
+  password: "",
+};
+
 const RegistrationPage = () => {
-  const [active, setActive] = useState("StepOne");
+  //состаяние для переключение между несколькими страницами процесса регистрации
+  const [activePage, setActivePage] = useState("StepOne");
+
+  //состояние для хранения почтыб пароля и имени пользователя
+  const [formValue, setFormValue] = useState(registartionData);
+  const { name, email, password } = formValue;
+
+  //универсальная функция для записи пароля и почты в один стейт
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormValue({ ...formValue, [e.target.name]: e.target.value });
+    console.log(formValue);
+  };
 
   return (
     <div>
       <Header />
-      {active === "StepOne" && <RegistrationStepOne setActive={setActive} />}
-      {active === "StepTwo" && <RegistrationStepTwo setActive={setActive} />}
-      {active === "StepThree" && <RegistrationStepThree />}
+      {activePage === "StepOne" && (
+        <RegistrationStepOne
+          setActivePage={setActivePage}
+          nameData={name}
+          handleChange={handleChange}
+        />
+      )}
+      {activePage === "StepTwo" && (
+        <RegistrationStepTwo
+          setActivePage={setActivePage}
+          emailData={email}
+          passwordData={password}
+          nameData={name}
+          handleChange={handleChange}
+        />
+      )}
+      {activePage === "StepThree" && <RegistrationStepThree />}
     </div>
   );
 };

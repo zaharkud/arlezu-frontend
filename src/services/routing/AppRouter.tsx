@@ -5,16 +5,18 @@ import { LOGIN_ROUTE, MAIN_ROUTE } from "services/consts/route.consts";
 import { useAppSelector } from "store";
 
 const AppRouter = () => {
-  const settings = useAppSelector((state) => state.settings);
+  const auth = useAppSelector((state) => state.auth);
 
   return (
     <Routes>
-      {settings.isAuth &&
+      {/*если пользователь авторизован*/}
+      {auth.token &&
         authRoutes.map(({ path, component }) => {
           return <Route key={path} path={path} element={component} />;
         })}
 
-      {!settings.isAuth &&
+      {/*если пользователь не авторизован*/}
+      {!auth.token &&
         authRoutes.map(({ path }) => {
           return (
             <Route
@@ -29,6 +31,7 @@ const AppRouter = () => {
         return <Route key={path} path={path} element={component} />;
       })}
 
+      {/*в любом другом случае переключаем на главную страницу*/}
       <Route path="*" element={<Navigate to={MAIN_ROUTE} replace />} />
     </Routes>
   );

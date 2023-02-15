@@ -15,14 +15,14 @@ import {
 import { useAppSelector } from "store/index";
 
 const MainMenuPage = () => {
-  const settings = useAppSelector((state) => state.settings);
+  const auth = useAppSelector((state) => state.auth);
 
   return (
     <>
       <div>
         <Header />
         <div className={style.pageContainer}>
-          {settings.isAuth ? <MainUserInfo /> : <MainAuthInfo />}
+          {auth.token ? <MainUserInfo /> : <MainAuthInfo />}
 
           <div className={style.boxesContainer}>
             <MainMenuElement

@@ -1,13 +1,13 @@
 import style from "./Settings.module.scss";
 import { Button, Header } from "components/index";
 
+import { logOut } from "store/authSlice";
+import { useAppDispatch, useAppSelector } from "store";
 import {
-  changeIsAuth,
   changeProfileImg,
   changeRepeatCardsRange,
   changeNewCardsRange,
 } from "store/settingsSlice";
-import { useAppDispatch, useAppSelector } from "store";
 
 const SettingsPage = () => {
   const dispatch = useAppDispatch();
@@ -87,9 +87,7 @@ const SettingsPage = () => {
           />
         </section>
 
-        <Button onClick={() => dispatch(changeIsAuth(false))}>
-          Выйти из аккаунта
-        </Button>
+        <Button onClick={() => dispatch(logOut())}>Выйти из аккаунта</Button>
       </div>
     </div>
   );

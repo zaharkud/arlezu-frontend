@@ -11,13 +11,13 @@ const GrammarPage = () => {
           <PromoBlock num={"00"} heading={"Введение"} />
           <PromoBlock num={"01"} heading={"Настоящее время"} />
           <PromoBlock num={"02"} heading={"Прошедшее время"} />
-          <PromoBlock num={"02"} heading={"Будущее время"} />
+          <PromoBlock num={"03"} heading={"Будущее время"} />
         </section>
         <section>
           <h1>Части речи</h1>
-          <PromoBlock num={"03"} heading={"Вопросительные слова"} />
-          <PromoBlock num={"04"} heading={"Существительное"} />
-          <PromoBlock num={"05"} heading={"Прилагательное"} />
+          <PromoBlock num={"04"} heading={"Вопросительные слова"} />
+          <PromoBlock num={"05"} heading={"Существительное"} />
+          <PromoBlock num={"06"} heading={"Прилагательное"} />
         </section>
       </div>
     </div>

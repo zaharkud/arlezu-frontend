@@ -1,7 +1,7 @@
 import style from "./Button.module.scss";
 
 interface ButtonTypes {
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
 }
 

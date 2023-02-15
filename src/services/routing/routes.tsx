@@ -26,7 +26,7 @@ import {
   MAIN_ROUTE,
 } from "services/consts/route.consts";
 
-
+//определяем приватные роуты
 export const authRoutes = [
   {
     path: CARDS_REPEATER_ROUTE,
@@ -50,6 +50,7 @@ export const authRoutes = [
   },
 ];
 
+//определяем публчные роуты
 export const publicRoutes = [
   {
     path: ABOUTE_ROUTE,

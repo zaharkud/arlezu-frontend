@@ -8,6 +8,7 @@ const initialState: initialStateTypes = {
   cardStep: 1,
 };
 
+//слайс для хранения номера карточки, нажатой в DictionaryList, чтобы открыть ее в DictionaryViewer
 const cardsHelperSlice = createSlice({
   name: "cardsStep",
   initialState,
