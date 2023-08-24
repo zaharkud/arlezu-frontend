@@ -1,5 +1,5 @@
 name: Arlezu Frontend
-run-name: Arlezu Frontend CI-Action
+run-name: Arlezu Frontend CI-Actions
 on:
   push:
     branches: [main]
