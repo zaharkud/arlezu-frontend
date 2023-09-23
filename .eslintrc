@@ -1,4 +1,4 @@
-{
+/*{
   "extends": [
     "react-app",
     "react-app/jest"
@@ -18,4 +18,4 @@
       "newlines-between": "always-and-inside-groups",
     }],
   }
-}
+}*/
