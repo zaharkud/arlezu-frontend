@@ -1,1 +1,1 @@
-export const REACT_APP_API_URL = "http://45.146.166.9:5000";//"https://arlezu-server.onrender.com";
+export const REACT_APP_API_URL = "https://server.arlezu.ru";//"https://arlezu-server.onrender.com";
