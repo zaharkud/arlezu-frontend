@@ -8,7 +8,7 @@ import { arlezuAPI } from "./api/arlezu.api";
 import settingsReducer from "./settingsSlice";
 import cardsHelperReducer from "./cardsHelperSlice";
 import authReducer from "./authSlice";
-import { setupListeners } from "@reduxjs/toolkit/dist/query";
+import { setupListeners } from "@reduxjs/toolkit/query";
 
 export const store = configureStore({
   reducer: {

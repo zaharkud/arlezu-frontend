@@ -35,7 +35,7 @@ const DictionaryListElement: React.FC<DictionaryListElementTypes> = ({
           </div>
           <div className={styles.textBottom}>
             <p className={styles.phonetics}>[{card.phonetics}]</p>
-            <p className={styles.wordTranslation}>{card.word_translation}</p>
+            <p className={styles.wordTranslation}>{card.wordTranslation}</p>
           </div>
         </div>
       </div>

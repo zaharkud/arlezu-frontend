@@ -1,9 +1,9 @@
 export interface ICard {
   id: number;
   word: string;
-  word_translation: string;
+  wordTranslation: string;
   phonetics: string;
   sentence: string;
-  sentence_translation: string;
+  sentenceTranslation: string;
   img: string;
 }

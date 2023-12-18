@@ -33,9 +33,7 @@ const DictionaryViewerElement: FC<DictionaryViewerElementTypes> = ({
         ></div>
         <div className={style.textTop}>
           <p className={style.word}>{cards[step].word}</p>
-          <p className={style.wordTranslation}>
-            {cards[step].word_translation}
-          </p>
+          <p className={style.wordTranslation}>{cards[step].wordTranslation}</p>
         </div>
         <div className={style.img}>
           <img src={`./img/content-images/${cards[step].img}.jpg`} />
@@ -43,7 +41,7 @@ const DictionaryViewerElement: FC<DictionaryViewerElementTypes> = ({
         <div className={style.textBottom}>
           <p className={style.sentence}>
             {sentenceTumbler
-              ? cards[step].sentence_translation
+              ? cards[step].sentenceTranslation
               : cards[step].sentence}
           </p>
         </div>
